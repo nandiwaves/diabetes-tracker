@@ -19,3 +19,15 @@ diabetes-tracker project
 
                 5. If tracker.py is run directly,
                 start the website.
+                NOTE
+Browser
+   ↓
+Visits /
+   ↓
+Flask sees @app.route("/")
+   ↓
+Runs home()
+   ↓
+home() returns index.html
+   ↓
+Browser displays your HTML
