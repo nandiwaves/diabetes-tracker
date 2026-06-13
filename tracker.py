@@ -9,7 +9,7 @@ def home():
     return render_template("index.html")
 @app.route("/add")
 def add():
-    return"<h1> Readings Page</h1>"
+    return render_template("add.html")
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
 

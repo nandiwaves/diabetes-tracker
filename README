@@ -6,10 +6,10 @@ diabetes-tracker project
    - Weekly Report button
 
    section one
+   -flask
    - render_template tells flask to find an Html filr in the template folder and display it to the user
    -"/" is the home page route to the wbsite
-                1. Import Flask tools.
-
+                1. Import Flask tools.                                   
                 2. Create a website called app.
 
                 3. When someone visits the home page (/),
@@ -19,6 +19,13 @@ diabetes-tracker project
 
                 5. If tracker.py is run directly,
                 start the website.
+section 2
+-creating a button for add reading page
+-add date
+-add time
+-add glucose
+-add weight
+-saving button                
                 NOTE
 Browser
    ↓
