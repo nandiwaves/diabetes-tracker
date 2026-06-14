@@ -1,15 +1,15 @@
 diabetes-tracker project
    - Home Page
    - Welcome message
-   - Add Reading button
-   - View History button
-   - Weekly Report button
+   - Add Reading 
+   - View History 
+   - Weekly Report 
 
    section one
    -flask
-   - render_template tells flask to find an Html filr in the template folder and display it to the user
+   - render_template tells flask to find an Html file in the template folder and display it to the user
    -"/" is the home page route to the wbsite
-                1. Import Flask tools.                                   
+                1. Import Flask             tools.                                   
                 2. Create a website called app.
 
                 3. When someone visits the home page (/),
@@ -20,12 +20,51 @@ diabetes-tracker project
                 5. If tracker.py is run directly,
                 start the website.
 section 2
+Create a page where the user can enter a blood glucose reading.
 -creating a button for add reading page
+<a href="/add">
+    <button>Add reading</button>
+</a>
 -add date
+<label>Date</label>
+<input type="date" name = "date">
 -add time
+<label> time</label>
+<input type="time" name="time">
 -add glucose
--add weight
--saving button                
+<label>Glucose</label>
+<input type="number" name= "glucose">
+-saving button 
+<input type="submit" value="save reading">
+
+Section 3
+Saving the glucose readings done by the patient
+- open the file,     "a" means append (add to the end of the file).
+-create a writer  object that writes rows In csv file 
+-write the rows
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 NOTE
 Browser
    ↓
