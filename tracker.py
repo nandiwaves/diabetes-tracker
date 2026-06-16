@@ -57,8 +57,13 @@ def data():
         #create a csv reader
         reader =csv.reader(file)
         #add each row to the reading list
+        next(reader)
         for row in reader:
+            if len(row) < 3 or row[2] == "":
+                continue
             readings.append(row)
+            dates.append(row[0])
+            glucose_values.append(int(row[2]))
     #display the readings
     return render_template("data.html", readings=readings,
                            dates = dates,

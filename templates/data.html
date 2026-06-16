@@ -32,26 +32,15 @@
 
         <script>
             //find the blank canvas where graph will be drawn
-            const chartArea = document.getElementById("glucoseChart")
+            const chartArea = document.getElementById("glucoseChart");
             //draw a fake graph
-            new Chart(chartArea, 
-                {type : "line",
+            new Chart(chartArea, {
+                type : "line",
                 data :{
-                    labels:[
-                        "Reading 1",
-                        "Reading 2",
-                        "Reading 3",
-                        "Reading 4"
-
-                    ],
+                    labels: {{dates | tojson}},
                     datasets: [{
                         label: "Glucose Level",
-                        data :[
-                            120,
-                            150,
-                            130,
-                            170
-                        ]
+                        data: {{glucose_values | tojson}}
                     }]
                 }
             });
