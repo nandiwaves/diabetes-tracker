@@ -6,15 +6,27 @@ app = Flask(__name__)
 #app stores the website, '/'IS THE WEBSITE ADDRESS
 @app.route("/")
 #Show the file you just wrote
+
+
+#Home route,
+#connect to index.html
+#shows the first page of the website
 def home():
     return render_template("index.html")
 
 
+#Add route
+#connects add.html
+#shows the form where the user enters
+# a glucose reading
 @app.route("/add")
 def add():
     return render_template("add.html")
 
-
+#save route
+#connects from form in add.html
+#receives form data and saves it 
+# into the CSV file
 @app.route("/save", methods=["POST"])
 def save():
     #get values entered by the user
@@ -29,10 +41,17 @@ def save():
         return redirect("/data")
     
 
+
+# data route
+# Connects to: templates/data.html
+# Purpose: reads saved CSV data 
+# and displays it on the webpage
 @app.route("/data")
 def data():
     #store all the glucose reading
     readings = []
+    dates =[]
+    glucose_values =[]
     #open the cvs file in read mode 
     with open("glucose_reading.csv", "r") as file:
         #create a csv reader
@@ -41,7 +60,11 @@ def data():
         for row in reader:
             readings.append(row)
     #display the readings
-    return render_template("data.html", readings=readings)
+    return render_template("data.html", readings=readings,
+                           dates = dates,
+                            glucose_values= glucose_values)
+
+   
     
     
 if __name__ == "__main__":

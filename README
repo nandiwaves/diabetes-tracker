@@ -43,6 +43,9 @@ Saving the glucose readings done by the patient
 -create a writer  object that writes rows In csv file 
 -write the rows
 
+sectin 4
+
+
 
 
 
@@ -77,3 +80,44 @@ Runs home()
 home() returns index.html
    ↓
 Browser displays your HTML
+
+<h1>          = Heading
+
+<table>       = Table
+
+<tr>          = Table row
+
+<th>          = Table header
+
+<td>          = Table data
+
+<a href="">   = Link
+
+{{ }}         = Display Python data (Jinja)
+
+{% for %}     = Loop through data (Jinja)
+
+{% endfor %}  = End loop
+
+1. Python 
+2. HTML 
+3. Flask 
+4. Jinja 
+5. Basic CSS
+6. Small amount of JavaScript
+7. Chart.js graph
+
+Chart.js Formula
+Chart.js Notes
+1. <canvas> creates a blank area for the graph.
+2. document.getElementById() finds the canvas.
+3. new Chart() creates the graph.
+4. type chooses the graph style (line, bar, pie).
+5. labels create the x-axis.
+6. data creates the y-axis values.
+
+In java.okay 
+()  → Do something
+[]  → List of things
+{}  → Description of things
+
