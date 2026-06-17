@@ -39,12 +39,19 @@ Create a page where the user can enter a blood glucose reading.
 
 Section 3
 Saving the glucose readings done by the patient
-- open the file,     "a" means append (add to the end of the file).
+- open the file,  "a" means append 
 -create a writer  object that writes rows In csv file 
 -write the rows
 
-sectin 4
+file = open("glucose_reading.csv", "a")
+writer = csv.writer(file)
+writer.writerow([date, time, glucose])
+file.close()
 
+section 4
+drawing the graph and table
+-<canvas id="glucoseChart"></canvas>(Blank white board)
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>(download chart.js)
 
 
 
@@ -120,4 +127,9 @@ In java.okay
 ()  → Do something
 []  → List of things
 {}  → Description of things
+
+//this direct show the page
+return render_template("data.html")
+//Go visit the /data route.
+return redirect("/data")
 
