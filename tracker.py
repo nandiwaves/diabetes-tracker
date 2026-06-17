@@ -38,7 +38,7 @@ def save():
         writer = csv.writer(file)
         writer.writerow([date, time, glucose])
         #take user to user data page
-        return redirect("/data")
+    return redirect("/data")
     
 
 
