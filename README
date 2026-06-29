@@ -43,7 +43,9 @@ Saving the glucose readings done by the patient
 -create a writer  object that writes rows In csv file 
 -write the rows
 
-sectin 4
+
+section 4
+drawing the  graph
 
 
 
@@ -120,4 +122,6 @@ In java.okay
 ()  → Do something
 []  → List of things
 {}  → Description of things
+
+
 

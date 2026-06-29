@@ -2,7 +2,7 @@
 <html>
     <head>
     <title>Glucose reading</title>
-    <!--Download Chart.js for me-->
+    <!--Download Chart.js-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
@@ -16,12 +16,21 @@
                 <th>Date</th>
                 <th>Time</th>
                 <th>Glucose</th>
+                <th>Delete</th>
             </tr>
+            <!--For every row inside readings, repeat the code below.-->
             {%for reading in readings%}
             <tr>
                 <td>{{ reading[0]}}</td>
                 <td>{{ reading[1]}}</td>
                 <td>{{ reading[2]}}</td>
+
+                <td>
+                <form action = "/delete/{{loop.index0}}" method="POST">
+                    <button>Delete</button>
+                </form>
+                    
+                </td>
             </tr>
             {% endfor%}
 
@@ -33,7 +42,7 @@
         <script>
             //find the blank canvas where graph will be drawn
             const chartArea = document.getElementById("glucoseChart");
-            //draw a fake graph
+            //draw a  graph
             new Chart(chartArea, {
                 type : "line",
                 data :{
@@ -42,6 +51,22 @@
                         label: "Glucose Level",
                         data: {{glucose_values | tojson}}
                     }]
+                },
+                // want to customize how my graph looks
+                options:{
+                    //showing the x axis
+                    scales: {
+                        //aply this to x axis
+                        x: {
+
+                            // for example the dates, these are the labels 
+                            ticks: {
+                                // if there are too many dates skip them 
+                                autoskip: true,
+                                maxTicksLimit: 10
+                            }
+                        }
+                    }
                 }
             });
         </script>
