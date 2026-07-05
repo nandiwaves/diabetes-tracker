@@ -1,76 +1,89 @@
-diabetes-tracker project
-   - Home Page
-   - Welcome message
-   - Add Reading 
-   - View History 
-   - Weekly Report 
+dDiabetes Tracker Project
 
-   section one
-   -flask
-   - render_template tells flask to find an Html file in the template folder and display it to the user
-   -"/" is the home page route to the wbsite
-                1. Import Flask             tools.                                   
-                2. Create a website called app.
+Home Page
 
-                3. When someone visits the home page (/),
-                    run the function home().
+* Welcome message
+* Add Reading
+* View History
+* Weekly Report
 
-                4. home() shows index.html.
+⸻
 
-                5. If tracker.py is run directly,
-                start the website.
-section 2
-Create a page where the user can enter a blood glucose reading.
--creating a button for add reading page
+Section 1: Flask
+
+* render_template() tells Flask to find an HTML file in the templates folder and display it to the user.
+* "/" is the home page route to the website.
+
+Steps:
+
+1. Import Flask.
+2. Create a website called app.
+3. When someone visits the home page (/), run the function home().
+4. home() shows index.html.
+5. If tracker.py is run directly, start the website.
+
+⸻
+
+Section 2: Create a Page to Enter Blood Glucose Readings
+
+Create a button for the Add Reading page
+
 <a href="/add">
-    <button>Add reading</button>
+    <button>Add Reading</button>
 </a>
--add date
+
+Add date
+
 <label>Date</label>
-<input type="date" name = "date">
--add time
-<label> time</label>
+<input type="date" name="date">
+
+Add time
+
+<label>Time</label>
 <input type="time" name="time">
--add glucose
+
+Add glucose
+
 <label>Glucose</label>
-<input type="number" name= "glucose">
--saving button 
-<input type="submit" value="save reading">
+<input type="number" name="glucose">
 
-Section 3
-Saving the glucose readings done by the patient
-- open the file,     "a" means append (add to the end of the file).
--create a writer  object that writes rows In csv file 
--write the rows
+Save button
 
+<input type="submit" value="Save Reading">
 
-section 4
-drawing the  graph
+⸻
 
+Section 3: Saving the Glucose Readings
 
+* Open the file ("a" means append).
+* Create a csv.writer object.
+* Write the row into the CSV file.
 
+file = open("glucose_reading.csv", "a")
+writer = csv.writer(file)
+writer.writerow([date, time, glucose])
+file.close()
 
+⸻
 
+Section 4: Drawing the Graph and Table
 
+* <canvas id="glucoseChart"></canvas> creates a blank area for the graph.
+* <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> loads Chart.js.
 
+⸻
 
+Flask Navigation
 
+# This directly shows the page
+return render_template("data.html")
+# Go visit the /data route.
+return redirect("/data")
 
+⸻
 
+Notes
 
-
-
-
-
-
-
-
-
-
-
-
-
-                NOTE
 Browser
    ↓
 Visits /
@@ -83,34 +96,35 @@ home() returns index.html
    ↓
 Browser displays your HTML
 
-<h1>          = Heading
+HTML
 
-<table>       = Table
+* <h1> = Heading
+* <table> = Table
+* <tr> = Table row
+* <th> = Table header
+* <td> = Table data
+* <a href=""> = Link
 
-<tr>          = Table row
+Jinja
 
-<th>          = Table header
+* {{ }} = Display Python data
+* {% for %} = Loop through data
+* {% endfor %} = End loop
 
-<td>          = Table data
+Technologies Used
 
-<a href="">   = Link
-
-{{ }}         = Display Python data (Jinja)
-
-{% for %}     = Loop through data (Jinja)
-
-{% endfor %}  = End loop
-
-1. Python 
-2. HTML 
-3. Flask 
-4. Jinja 
+1. Python
+2. HTML
+3. Flask
+4. Jinja
 5. Basic CSS
 6. Small amount of JavaScript
-7. Chart.js graph
+7. Chart.js
 
-Chart.js Formula
+⸻
+
 Chart.js Notes
+
 1. <canvas> creates a blank area for the graph.
 2. document.getElementById() finds the canvas.
 3. new Chart() creates the graph.
@@ -118,10 +132,10 @@ Chart.js Notes
 5. labels create the x-axis.
 6. data creates the y-axis values.
 
-In java.okay 
-()  → Do something
-[]  → List of things
-{}  → Description of things
+⸻
 
+JavaScript Reminder
 
-
+* () → Do something
+* [] → List of things
+* {} → Description of things
